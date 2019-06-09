@@ -1,0 +1,36 @@
+---
+layout: landing
+---
+     {% include banner.html %}
+<section id="postlist" class="wrapper style4 special">
+     <div class="inner">
+       <header class="major">
+         <h2>Posts</h2>
+	 <p>Just puttin it out there</p>
+       </header>
+
+       <ul class="features">
+
+     {% assign mod = 2 %}
+     {% for post in site.posts %}
+	{% assign mod = forloop.index | modulo: 2 %}
+	<li class="icon {{ post.icon }}">
+	<sub>{{ post.date | date: '%B %d, %Y' }}</sub>
+	<a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+	{{ post.excerpt }} <a href="{{ post.url }}">(Read More)</a>
+
+	{% for category in post.categories %}
+	  <i class="fa fa-tag"></i>{{ category }}&nbsp;
+	{% endfor %}
+
+	</li>
+     {% endfor %}
+
+     {% if mod != 0 %}
+       <li/>
+     {% endif %}
+
+     </ul>
+     </div> <!-- end div inner -->
+</section> 
+

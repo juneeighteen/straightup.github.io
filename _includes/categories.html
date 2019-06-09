@@ -1,0 +1,19 @@
+<section id="three" class="wrapper style3 special">
+  <div class="inner">
+       <header class="major">
+          <h2>Categories</h2>
+              <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+                 fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+       </header>
+   <ul class="features">
+      {% for category in site.categories %}
+        <li class="icon fa-heart-o">
+	   <h3> {{ category | first | strip_html }} </h3>
+	   <p>Category Description</p>
+	</li>
+      {% endfor %}
+        
+  </ul>
+    </div>
+</section>
+
